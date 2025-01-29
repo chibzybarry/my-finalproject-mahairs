@@ -1,7 +1,10 @@
-import { Navigate, useLocation, Outlet } from "react-router-dom";
+import { User } from "lucide-react";
+import { Navigate, useLocation } from "react-router-dom";
 
 function CheckAuth({isAuthenticated, user, children}) {
   const location = useLocation();
+  console.log(location.pathname, User);
+  
 
   if (location.pathname === "/") {
     if (!isAuthenticated) {
@@ -27,7 +30,7 @@ function CheckAuth({isAuthenticated, user, children}) {
 
 
   if (isAuthenticated && 
-    (    location.pathname.includes("/login") ||
+    (location.pathname.includes("/login") ||
         location.pathname.includes("/register")
 )
 ) {
@@ -35,7 +38,7 @@ function CheckAuth({isAuthenticated, user, children}) {
       return <Navigate to="/admin/dashboard" />;
     }
     else{
-        return <Navigate to="/shop/home" />
+        return <Navigate to="/shop/home" />;
     }
   }
   if (isAuthenticated &&
