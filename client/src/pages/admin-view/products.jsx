@@ -1,9 +1,9 @@
-function AdminProducts() {
-    return (
-        <div>
-            Admin Products
-        </div>
-    );
+import React from 'react'
+
+function Products() {
+  return (
+    <div>products</div>
+  )
 }
 
-export default AdminProducts;
+export default Products
