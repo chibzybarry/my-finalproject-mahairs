@@ -22,24 +22,24 @@ function AuthLogin() {
 
      
     function onSubmit (event){
-            event.preventDefault()
+            event.preventDefault();
 
-    dispatch (loginUser (formData)).then(data =>{
+    dispatch (loginUser (formData)).then((data) =>{
         if (data?.payload?.success) {
             toast({
                 title: data?.payload?.message,
-            })
+            });
         } else{
             toast({
                 title: data?.payload?.message,
-                variant: "destructive"
-            })
+                variant: "destructive",
+            });
         }
-    })
+    });
     }
 
 
-    return <div className="mx-auto w-full max-w-md space-y-6"> 
+    return (<div className="mx-auto w-full max-w-md space-y-6"> 
     <div className="text-center">
         <h1 className="text -3xl font-bold tracking-tight text-foreground">
             Sign to your account</h1>
@@ -58,6 +58,7 @@ function AuthLogin() {
         onSubmit = {onSubmit }
         />
     </div>
+    );
       
 }
 

@@ -4,11 +4,11 @@ import axios from 'axios';
 
 const initialState = {
     isAuthenticated: false,
-    isLoading: false,
+    isLoading: true,
     user: null,
 };
 
-export const registerUser = createAsyncThunk('auth/register',
+export const registerUser = createAsyncThunk('/auth/register',
      async (formData) => {
         const response = await axios.post ('http://localhost:5000/api/auth/register',formData, {
             withCredentials: true
@@ -19,7 +19,7 @@ export const registerUser = createAsyncThunk('auth/register',
 
      })
 
-     export const loginUser = createAsyncThunk('auth/login',
+     export const loginUser = createAsyncThunk('/auth/login',
         async (formData) => {
            const response = await axios.post ('http://localhost:5000/api/auth/login',formData, {
                withCredentials: true
@@ -32,7 +32,7 @@ export const registerUser = createAsyncThunk('auth/register',
 
 
         
-export const checkAuth = createAsyncThunk('auth/checkauth',
+export const checkAuth = createAsyncThunk('/auth/checkauth',
     async () => {
        const response = await axios.get('http://localhost:5000/api/auth/check-auth',
         {
