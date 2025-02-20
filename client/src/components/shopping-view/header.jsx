@@ -80,7 +80,7 @@ function ShoppingHeader() {
       <div className="flex h-16 items-center justify-between px-4 md:px-6">
         <Link to="/shop/home" className="flex items-center gap-2">
           <HousePlug className="h-6 w-6" />
-          <span className="font-bold">Ecommerce</span>
+          <span className="font-bold">MA-HAIRS</span>
         </Link>
         <Sheet>
           <SheetTrigger asChild>
@@ -91,16 +91,16 @@ function ShoppingHeader() {
           </SheetTrigger>
           <SheetContent side="left" className="w-full max-w-xs">
             <MenuItems />
+            <HeaderRightContent />
           </SheetContent>
         </Sheet>
         <div className="hidden lg:block">
           <MenuItems />
         </div>
-        {isAuthenticated ? (
-          <div>
+        
+          <div className="hidden lg:block">
             <HeaderRightContent />
           </div>
-        ) : null}
       </div>
     </header>
   );

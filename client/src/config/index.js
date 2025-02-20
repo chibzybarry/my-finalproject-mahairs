@@ -137,5 +137,48 @@ export const shoppingViewHeaderMenuItems =[
     label: 'Accessories',
     path: '/shop/listing',
   },
-]
+];
+
+export const categoryOptionsMap = {
+  men: "Men",
+  women: "Women",
+  kids: "Kids",
+  accessories: "Accessories",
+  footwear: "Footwear",
+};
+
+export const brandOptionsMap = {
+  nike: "Nike",
+  adidas: "Adidas",
+  puma: "Puma",
+  levi: "Levi",
+  zara: "Zara",
+  "h&m": "H&M",
+};
+
+
+export const filterOptions = {
+  category: [
+    { id: "men", label: "Men" },
+    { id: "women", label: "Women" },
+    { id: "kids", label: "Kids" },
+    { id: "footwear", label: "Footwear" },
+    { id: "accessories", label: "Accessories" },
+  ],
+  brand: [
+    { id: "nike", label: "Nike" },
+    { id: "adidas", label: "Adidas" },
+    { id: "puma", label: "Puma" },
+    { id: "levi", label: "Levi's" },
+    { id: "zara", label: "Zara" },
+    { id: "h&m", label: "H&M" },
+  ],
+};
+
+export const sortOptions = [
+  { id: "price-low-to-high", label: "Price: Low to High" },
+  { id: "price-high-to-low", label: "Price: High to Low" },
+  { id: "title-atoz", label: "Title: A to z" },
+  { id: "title-ztoa", label: "Title: Z to A" },
+];
 
