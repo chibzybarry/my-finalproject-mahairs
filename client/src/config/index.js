@@ -61,11 +61,11 @@ export const addProductFormElements = [
     name: "category", 
     componentType: "select",
     options: [
-      { id: "men", label: "Men" },
+      { id: "men-braids", label: "Men-braids" },
       { id: "women", label: "Women" },
       { id: "kids", label: "Kids" },
-      { id: "accessories", label: "Accessories" },
-      { id: "footwear", label: "Footwear" },
+      { id: "installations", label: "Installations" },
+      { id: "revamp", label: "Revamp" },
     ],
   },
   {
@@ -73,9 +73,9 @@ export const addProductFormElements = [
     name: "brand",
     componentType: "select",
     options: [
-      { id: "nike", label: "Nike" },
-      { id: "adidas", label: "Adidas" },
-      { id: "puma", label: "Puma" },
+      { id: "piano wigs", label: "Piano wigs" },
+      { id: "bouncing wigs", label: "Bouncing wigs" },
+      { id: "bob-wigs", label: "Bob-wigs" },
       { id: "levi", label: "Levi's" },
       { id: "zara", label: "Zara" },
       { id: "h&m", label: "H&M" },
@@ -113,8 +113,8 @@ export const shoppingViewHeaderMenuItems =[
     path: '/shop/home',
   },
   {
-    id:'men',
-    label: 'Men',
+    id:'men-braids',
+    label: 'Men-braids',
     path: '/shop/listing',
   },
   {
@@ -128,47 +128,47 @@ export const shoppingViewHeaderMenuItems =[
     path: '/shop/listing',
   },
   {
-    id:'footwears',
-    label: 'Footwears',
+    id:'revamps',
+    label: 'Revamps',
     path: '/shop/listing',
   },
   {
-    id:'accessories',
-    label: 'Accessories',
+    id:'hair-intallations',
+    label: 'Hair-intallations',
     path: '/shop/listing',
   },
 ];
 
 export const categoryOptionsMap = {
-  men: "Men",
+  menBraids: "Men-Braids",
   women: "Women",
   kids: "Kids",
-  accessories: "Accessories",
-  footwear: "Footwear",
+  hairinstallations: "Hair-Installations",
+  revamps: "Revamps",
 };
 
 export const brandOptionsMap = {
-  nike: "Nike",
-  adidas: "Adidas",
-  puma: "Puma",
+  pianowig: "Piano straight",
+  boucingwigs: "Bouncing wigs",
+  bobwigs: "Bob-Wigs",
   levi: "Levi",
   zara: "Zara",
-  "h&m": "H&M",
+  hm: "H&M",
 };
 
 
 export const filterOptions = {
   category: [
-    { id: "men", label: "Men" },
+    { id: "men-braids", label: "Men-Braids" },
     { id: "women", label: "Women" },
     { id: "kids", label: "Kids" },
-    { id: "footwear", label: "Footwear" },
-    { id: "accessories", label: "Accessories" },
+    { id: "revamps", label: "Revamps" },
+    { id: " hair-installations", label: "Hair-Intallations" },
   ],
   brand: [
-    { id: "nike", label: "Nike" },
-    { id: "adidas", label: "Adidas" },
-    { id: "puma", label: "Puma" },
+    { id: "piano straight", label: "Piano - wigs" },
+    { id: "bouncing wigs", label: "Bouncing - wigs" },
+    { id: "bob-wigs", label: "Bob-wigs" },
     { id: "levi", label: "Levi's" },
     { id: "zara", label: "Zara" },
     { id: "h&m", label: "H&M" },
