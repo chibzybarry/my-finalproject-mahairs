@@ -150,7 +150,7 @@ export const categoryOptionsMap = {
 export const brandOptionsMap = {
   pianowig: "Piano straight",
   boucingwigs: "Bouncing wigs",
-  bobwigs: "Bob-Wigs",
+  "bob-wigs": "Bob-Wigs",
   levi: "Levi",
   zara: "Zara",
   hm: "H&M",

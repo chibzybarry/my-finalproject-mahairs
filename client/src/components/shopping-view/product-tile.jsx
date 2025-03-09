@@ -10,7 +10,7 @@ function ShoppingProductTile({product , handleGetProductDetails}) {
       <div onClick={()=>handleGetProductDetails(product?._id)}>
         <div className="relative">
           <img
-            src={product?.image}  
+            src={product?.image} 
             alt={product.title}
             className="w-full h-[300px] object-cover rounded-t-lg"
           />
