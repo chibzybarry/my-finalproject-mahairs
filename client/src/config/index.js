@@ -76,9 +76,9 @@ export const addProductFormElements = [
       { id: "piano wigs", label: "Piano wigs" },
       { id: "bouncing wigs", label: "Bouncing wigs" },
       { id: "bob-wigs", label: "Bob-wigs" },
-      { id: "levi", label: "Levi's" },
-      { id: "zara", label: "Zara" },
-      { id: "h&m", label: "H&M" },
+      { id: "braids", label: "Braids" },
+      { id: "bone-Straight", label: "Bone-Straight" },
+      { id: "pizzy-Curls", label: "Pizzy-Curls"},
     ],
   },
   {
@@ -151,9 +151,9 @@ export const brandOptionsMap = {
   pianowig: "Piano straight",
   boucingwigs: "Bouncing wigs",
   "bob-wigs": "Bob-Wigs",
-  levi: "Levi",
-  zara: "Zara",
-  hm: "H&M",
+  braids: "Braids",
+  "bone-Straight": "bone-Straight",
+  "pizzy-Curls": "pizzy-Curls",
 };
 
 
@@ -169,9 +169,9 @@ export const filterOptions = {
     { id: "piano straight", label: "Piano - wigs" },
     { id: "bouncing wigs", label: "Bouncing - wigs" },
     { id: "bob-wigs", label: "Bob-wigs" },
-    { id: "levi", label: "Levi's" },
-    { id: "zara", label: "Zara" },
-    { id: "h&m", label: "H&M" },
+    { id: "braids", label: "Braids" },
+    { id: "bone-Straight", label: "Bone-Straight" },
+    { id: "pizzy-Curls", label: "Pizzy-Curls" },
   ],
 };
 

@@ -80,13 +80,22 @@ const fetchCartItems = async (req, res) => {
       await cart.save();
     }
 
+    // const populateCartItems = validItems.map((item) => ({
+    //   productId: item.productId._id,
+    //   image: item.productId.image,
+    //   title: item.productId.title,
+    //   price: item.productId.price,
+    //   salePrice: item.productId.salePrice,
+    //   quantity: item.quantity,
+    // }));
+
     const populateCartItems = validItems.map((item) => ({
       productId: item.productId._id,
       image: item.productId.image,
       title: item.productId.title,
       price: item.productId.price,
       salePrice: item.productId.salePrice,
-      quantity: item.quantity,
+      quantity: item.quantity ?? 1, // 🔥 Ensure quantity is always present
     }));
 
     res.status(200).json({

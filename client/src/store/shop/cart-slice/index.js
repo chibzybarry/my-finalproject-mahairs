@@ -17,7 +17,6 @@ export const addToCart = createAsyncThunk(
         quantity,
       }
     );
-
     return response.data;
   }
 );
@@ -28,6 +27,8 @@ export const fetchCartItems = createAsyncThunk(
     const response = await axios.get(
       `http://localhost:5000/api/shop/cart/get/${userId}`
     );
+    console.log("Cart API Response:", response)
+
 
     return response.data;
   }
