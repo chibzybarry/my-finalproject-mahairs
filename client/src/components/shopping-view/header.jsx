@@ -17,18 +17,31 @@ import { logoutUser } from "@/store/auth-slice";
 import UserCartWrapper from "./cart-wrapper";
 import { useEffect, useState } from "react";
 import { fetchCartItems } from "@/store/shop/cart-slice";
+import { Label } from "../ui/label";
 
 function MenuItems() {
+
+  const navigate = useNavigate()
+
+  function handleNavigate(getCurrentMenuItem){
+    sessionStorage.removeItem("filters");
+    const currentFilter = getCurrentMenuItem.id !== "home" ?
+    {
+      category: [getCurrentMenuItem.id]
+    }: null
+
+    sessionStorage.setItem("filters", JSON.stringify(currentFilter));
+    navigate(getCurrentMenuItem.path);
+
+  }
+
+
   return (
     <nav className="flex flex-col mb-3 lg:mb-0 lg-items-center gap-6 lg:flex-row">
       {shoppingViewHeaderMenuItems.map((menuItem) => (
-        <Link
-          className="text-sm font-medium"
-          key={menuItem.id}
-          to={menuItem.path}
-        >
+        <Label onClick={()=> handleNavigate(menuItem)} className="text-sm font-medium cursor-pointer" key={menuItem.id}>
           {menuItem.label}
-        </Link>
+        </Label>
       ))}
     </nav>
   );
@@ -42,37 +55,36 @@ function HeaderRightContent() {
   const dispatch = useDispatch();
 
   const handleLogout = () => {
-    dispatch(logoutUser())
-  }
+    dispatch(logoutUser());
+  };
 
-
-  useEffect(()=>{
+  useEffect(() => {
     dispatch(fetchCartItems(user?.id));
-  },[dispatch])
+  }, [dispatch]);
 
-  console.log (cartItems, "Ada ogbu")
+  console.log(cartItems, "Ada ogbu");
 
   return (
     <div className="flex lg:items-center lg:flex-row flex-col gap-4">
-      <Sheet open={openCartSheet} onOpenChange={()=>setOpenCartSheet(false)}>
-      <Button
-       onClick={()=>setOpenCartSheet(true)}
-        variant="outline" 
-        size="icon"
-        className="relative"
+      <Sheet open={openCartSheet} onOpenChange={() => setOpenCartSheet(false)}>
+        <Button
+          onClick={() => setOpenCartSheet(true)}
+          variant="outline"
+          size="icon"
+          className="relative"
         >
-        <ShoppingCart className="h-6 w-6" />
-        <span className="sr-only">user cart</span>
-      </Button>
-      <UserCartWrapper 
-      cartItems={
+          <ShoppingCart className="h-6 w-6" />
+          <span className="sr-only">user cart</span>
+        </Button>
+        <UserCartWrapper
+          cartItems={
             cartItems && cartItems.items && cartItems.items.length > 0
               ? cartItems.items
               : []
           }
         />
       </Sheet>
-     
+
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Avatar className="bg-black ">
@@ -85,13 +97,13 @@ function HeaderRightContent() {
           <DropdownMenuLabel>logged in as {user?.userName}</DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuItem onClick={() => navigate("/shop/account")}>
-          <UserCog className="mr-2 h-4 w-4" />
-          Account
+            <UserCog className="mr-2 h-4 w-4" />
+            Account
           </DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuItem onClick={handleLogout}>
-          <LogOut className="mr-2 h-4 w-4" />
-          Logout
+            <LogOut className="mr-2 h-4 w-4" />
+            Logout
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
@@ -124,10 +136,10 @@ function ShoppingHeader() {
         <div className="hidden lg:block">
           <MenuItems />
         </div>
-        
-          <div className="hidden lg:block">
-            <HeaderRightContent />
-          </div>
+
+        <div className="hidden lg:block">
+          <HeaderRightContent />
+        </div>
       </div>
     </header>
   );
