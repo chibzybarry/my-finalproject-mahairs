@@ -9,7 +9,7 @@ if (location.pathname === "/") {
       return <Navigate to="/auth/login" />;
     } else {
       if (user?.role === "admin") {
-        return <Navigate to="/admin/dashboard" />;
+        return <Navigate to="/admin" />;
       } else {
         return <Navigate to="/shop/home" />;
       }
@@ -33,7 +33,7 @@ if (location.pathname === "/") {
 )
 ) {
     if(user?.role === "admin"){
-      return <Navigate to="/admin/dashboard" />;
+      return <Navigate to="/admin" />;
     }
     else{
         return <Navigate to="/shop/home" />;
@@ -49,7 +49,7 @@ if (location.pathname === "/") {
     user?.role === "admin" && 
      location.pathname.includes("shop")
      ){
-    return <Navigate to="/admin/dashboard" />;
+    return <Navigate to="/admin" />;
   }
     
   return <>{children}</>;
