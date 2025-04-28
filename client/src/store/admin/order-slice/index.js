@@ -9,9 +9,11 @@ const initialState = {
 export const getAllOrdersForAdmin = createAsyncThunk(
   "/order/getAllOrdersForAdmin",
   async () => {
+    console.log("Hitting here")
     const response = await axios.get(
       `http://localhost:5000/api/admin/orders/get`
     );
+    console.log("Res",response)
 
     return response.data;
   }

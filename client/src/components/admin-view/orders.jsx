@@ -144,7 +144,6 @@ function AdminOrdersView() {
     dispatch(getAllOrdersForAdmin());
   }, [dispatch]);
 
-  console.log(orderDetails, "orderList");
 
   useEffect(() => {
     if (orderDetails !== null) setOpenDetailsDialog(true);
@@ -207,8 +206,13 @@ function AdminOrdersView() {
                       </Dialog>
                     </TableCell>
                   </TableRow>
-                ))
-              : null}
+                )): (
+                  <TableRow>
+                    <TableCell colSpan={5} className="text-center py-4 text-gray-500">
+                      No orders found.
+                    </TableCell>
+                  </TableRow>
+                )}
           </TableBody>
         </Table>
       </CardContent>

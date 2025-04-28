@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 function ShoppingCheckout() {
   const { cartItems } = useSelector((state) => state.shopCart);
 
-  console.log(cartItems);
+  console.log("Carttu",cartItems);
 
   const totalCartAmount =
     cartItems && cartItems.items && cartItems.items.length > 0
@@ -31,7 +31,7 @@ function ShoppingCheckout() {
         <Address />
 
         <div className="flex flex-col gap-4">
-          {cartItems && cartItems.item && cartItems.items.length > 0
+          {cartItems && cartItems.items && cartItems.items.length > 0
             ? cartItems.items.map((item) => (
                 <UserCartItemsContent cartItem={item} />
               ))

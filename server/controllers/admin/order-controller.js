@@ -1,31 +1,35 @@
 const Order = require("../../models/Order");
 
 const getAllOrdersOfAllUsers = async (req, res) => {
-    console.log("Orders:")
+  console.log("Orders:");
+
   try {
     const orders = await Order.find({});
 
-    if (!orders.length) {
-      return res.status(404).json({
-        success: false,
-        message: "No orders found!",
+    if (!orders || orders.length === 0) {
+      return res.status(200).json({
+        success: true,
+        data: [],
+        message: "No orders found.",
       });
     }
+    
 
-    console.log("Orders:", orders)
+    console.log("Orders:", orders);
 
     res.status(200).json({
       success: true,
       data: orders,
     });
   } catch (e) {
-    console.log(e);
+    console.error("Error fetching orders:", e);
     res.status(500).json({
       success: false,
-      message: "Some error occured!",
+      message: "Some error occurred!",
     });
   }
 };
+
 
 const getOrderDetailsForAdmin = async (req, res) => {
   try {
