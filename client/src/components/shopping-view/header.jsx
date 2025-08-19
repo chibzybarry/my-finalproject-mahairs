@@ -68,14 +68,20 @@ function HeaderRightContent() {
     <div className="flex lg:items-center lg:flex-row flex-col gap-4">
       <Sheet open={openCartSheet} onOpenChange={() => setOpenCartSheet(false)}>
         <Button
-          onClick={() => setOpenCartSheet(true)}
-          variant="outline"
-          size="icon"
-          className="relative"
-        >
-          <ShoppingCart className="h-6 w-6" />
-          <span className="sr-only">user cart</span>
-        </Button>
+  onClick={() => setOpenCartSheet(true)}
+  variant="outline"
+  size="icon"
+  className="relative"
+>
+  <ShoppingCart className="h-6 w-6" />
+  {cartItems?.items?.length > 0 && (
+    <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-red-600 text-[10px] font-bold text-white">
+      {cartItems.items.length}
+    </span>
+  )}
+  <span className="sr-only">user cart</span>
+</Button>
+
         <UserCartWrapper
         setOpenCartSheet={setOpenCartSheet}
           cartItems={
@@ -97,10 +103,6 @@ function HeaderRightContent() {
         <DropdownMenuContent side="right" className="w-56">
           <DropdownMenuLabel>logged in as {user?.userName}</DropdownMenuLabel>
           <DropdownMenuSeparator />
-          <DropdownMenuItem onClick={() => navigate("/shop/account")}>
-            <UserCog className="mr-2 h-4 w-4" />
-            Account
-          </DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuItem onClick={handleLogout}>
             <LogOut className="mr-2 h-4 w-4" />
